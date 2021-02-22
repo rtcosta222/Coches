@@ -12,12 +12,12 @@ import models.Coche;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.action.DynaActionForm;
 import repositories.RepositoryCoche;
 
 /**
  *
- * @author lscar
+ * @author lscarimport repositories.RepositoryCoche;
+
  */
 public class ActionEliminarCoche extends org.apache.struts.action.Action {
 
@@ -46,7 +46,7 @@ public class ActionEliminarCoche extends org.apache.struts.action.Action {
         this.repo.eliminarCoche(idcoche);
         
         ArrayList<Coche> z_coches = this.repo.getCoches();
-        request.getServletContext().setAttribute("ALLCOCHES", z_coches);
+        servlet.getServletContext().setAttribute("ALLCOCHES", z_coches);
         return mapping.findForward("webcoches");
     }
 }

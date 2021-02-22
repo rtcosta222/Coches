@@ -39,7 +39,7 @@ public class PlugInCoche implements PlugIn{
             servlet.getServletContext().setAttribute("ALLMARCAS", z_marcas);
         } catch (SQLException ex) {
             System.out.println("Error: " + ex);
-            throw new ServletException("Error SQL: " + ex);
+            throw new ServletException("Error SQL (nós aqui): " + ex);
 
         }
     }

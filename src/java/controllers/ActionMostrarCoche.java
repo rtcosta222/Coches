@@ -44,7 +44,6 @@ public class ActionMostrarCoche extends org.apache.struts.action.Action {
         int idcoche = Integer.parseInt(ui);
         Coche z_coche = this.repo.getCoche(idcoche);
         request.setAttribute("COCHESEL", z_coche);
-        
         return mapping.findForward("webmostrarcoche");
     }
 }

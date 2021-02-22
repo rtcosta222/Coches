@@ -13,6 +13,7 @@ import models.Coche;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.DynaActionForm;
 import repositories.RepositoryCoche;
 
 /**
@@ -42,7 +43,8 @@ public class ActionAnadirCoche extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        FormCheckAnadirCoche f = (FormCheckAnadirCoche) form;
+        DynaActionForm f = (DynaActionForm) form;
+        FormCheckAnadirCoche f = (FormCheckAnadirCoche) formssss;
         int idcoche = f.getIdcoche();
         String marca = f.getMarca();
         String modelo = f.getModelo();
@@ -52,7 +54,6 @@ public class ActionAnadirCoche extends org.apache.struts.action.Action {
         
         ArrayList<Coche> z_coches = this.repo.getCoches();
         request.getServletContext().setAttribute("ALLCOCHES", z_coches);
-//        return mapping.findForward("webanadircoche");        
-        return mapping.getInputForward();
+        return mapping.findForward("webcoches");
     }
 }

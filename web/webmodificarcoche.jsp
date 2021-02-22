@@ -33,7 +33,7 @@
                         <html:text property="conductor" value="${cochemod.conductor}" styleClass="form-control"/>
                         <label>Imagen: </label>
                         <html:text property="imagen" value="${cochemod.imagen}" styleClass="form-control"/><br/>
-                        <button class="btn btn-info">Modificar Coche</button>
+                        <button type="submit" class="btn btn-info">Modificar Coche</button>
                     </html:form>                    
                 </div>
             </main><!-- /.container -->            
