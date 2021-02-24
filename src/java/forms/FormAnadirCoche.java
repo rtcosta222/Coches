@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -19,7 +19,7 @@ import repositories.RepositoryCoche;
  *
  * @author lscar
  */
-public class FormCheckAnadirCoche extends org.apache.struts.action.ActionForm {
+public class FormAnadirCoche extends org.apache.struts.action.ActionForm {
     
     private int idcoche;
     private String marca;
@@ -28,7 +28,7 @@ public class FormCheckAnadirCoche extends org.apache.struts.action.ActionForm {
     private String imagen;
     RepositoryCoche repo;
     
-    public FormCheckAnadirCoche() {
+    public FormAnadirCoche() {
         this.repo = new RepositoryCoche();
     }
 
@@ -82,7 +82,7 @@ public class FormCheckAnadirCoche extends org.apache.struts.action.ActionForm {
         ActionErrors errors = new ActionErrors();
    
         try {
-            if (this.repo.buscarCoche(getIdcoche()) != false) {
+            if (this.repo.buscarCoche(getIdcoche()) == true) {
                 System.out.println("dentro del if buscar");
                 errors.add("idcoche", new ActionMessage("error.id.duplicado"));
             } else if (this.getMarca() == null || this.getMarca().length() < 1) {
@@ -93,7 +93,7 @@ public class FormCheckAnadirCoche extends org.apache.struts.action.ActionForm {
                 errors.add("modelo", new ActionMessage("error.modelo.required"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(FormCheckAnadirCoche.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FormAnadirCoche.class.getName()).log(Level.SEVERE, null, ex);
         }
         return errors;
     }

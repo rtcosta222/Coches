@@ -5,6 +5,8 @@
  */
 package controllers;
 
+import forms.FormAnadirCoche;
+import forms.FormModificarCoche;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,14 +42,14 @@ public class ActionModificarCoche2 extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
-        String ui = request.getParameter("idcoche");
-        int z_idcoche = Integer.parseInt(ui);
-        String z_marca = request.getParameter("marca");
-        String z_modelo = request.getParameter("modelo");
-        String z_conductor = request.getParameter("conductor");
-        String z_imagen = request.getParameter("imagen");
-        this.repo.modificarCoche(z_idcoche, z_marca, z_modelo, z_conductor, z_imagen);
+
+        FormModificarCoche f = (FormModificarCoche) form;
+        int idcoche = f.getIdcoche();
+        String marca = f.getMarca();
+        String modelo = f.getModelo();
+        String conductor = f.getConductor();
+        String imagen = f.getImagen();
+        this.repo.modificarCoche(idcoche, marca, modelo, conductor, imagen);
         
         ArrayList<Coche> z_coches = this.repo.getCoches();
         request.getServletContext().setAttribute("ALLCOCHES", z_coches);

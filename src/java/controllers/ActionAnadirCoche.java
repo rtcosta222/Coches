@@ -5,7 +5,7 @@
  */
 package controllers;
 
-import forms.FormCheckAnadirCoche;
+import forms.FormAnadirCoche;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,8 +43,7 @@ public class ActionAnadirCoche extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        DynaActionForm f = (DynaActionForm) form;
-        FormCheckAnadirCoche f = (FormCheckAnadirCoche) formssss;
+        FormAnadirCoche f = (FormAnadirCoche) form;
         int idcoche = f.getIdcoche();
         String marca = f.getMarca();
         String modelo = f.getModelo();
@@ -54,6 +53,7 @@ public class ActionAnadirCoche extends org.apache.struts.action.Action {
         
         ArrayList<Coche> z_coches = this.repo.getCoches();
         request.getServletContext().setAttribute("ALLCOCHES", z_coches);
-        return mapping.findForward("webcoches");
+        return mapping.getInputForward();
+//        return mapping.findForward("webanadircoche");
     }
 }

@@ -24,15 +24,20 @@
                     <h1>Anadir Coche</h1>
                     <html:form action="/ActionAnadirCoche">
                         <label>Id.: </label>
-                        <html:text property="idcoche" styleClass="form-control"/>
+                            <html:text property="idcoche" styleClass="form-control"/>
+                            <span style="color:red"><html:errors property="idcoche"/></span>
                         <label>Marca: </label>
-                        <html:text property="marca" styleClass="form-control"/>
+                            <html:text property="marca" styleClass="form-control"/>
+                            <span style="color:red"><html:errors property="marca"/></span>
                         <label>Modelo: </label>
-                        <html:text property="modelo" styleClass="form-control"/>
+                            <html:text property="modelo" styleClass="form-control"/>
+                            <span style="color:red"><html:errors property="modelo"/></span>
                         <label>Conductor: </label>
-                        <html:text property="conductor" styleClass="form-control"/>
+                            <html:text property="conductor" styleClass="form-control"/>
+                            <span style="color:red"><html:errors property="conductor"/></span>
                         <label>Imagen: </label>
-                        <html:text property="imagen" styleClass="form-control"/><br/>
+                            <html:text property="imagen" styleClass="form-control"/><br/>
+                            <span style="color:red"><html:errors property="imagen"/></span>
                         <button class="btn btn-info">Insertar Coche</button>
                     </html:form>                    
                 </div>

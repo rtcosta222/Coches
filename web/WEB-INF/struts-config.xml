@@ -6,14 +6,8 @@
 
 <struts-config>
     <form-beans>
-        <form-bean name="FormCheckAnadirCoche" type="forms.FormCheckAnadirCoche"/>
-        <form-bean name="FormModificarCoche" type="org.apache.struts.action.DynaActionForm">
-            <form-property name="idcoche" type="java.lang.String"/>
-            <form-property name="marca" type="java.lang.String"/>
-            <form-property name="modelo" type="java.lang.String"/>
-            <form-property name="conductor" type="java.lang.String"/>
-            <form-property name="imagen" type="java.lang.String"/>
-        </form-bean> 
+        <form-bean name="FormModificarCoche" type="forms.FormModificarCoche"/>
+        <form-bean name="FormAnadirCoche" type="forms.FormAnadirCoche"/>
         <form-bean name="FormBuscarCoche" type="org.apache.struts.action.DynaActionForm">
             <form-property name="marca" type="java.lang.String"/>
         </form-bean>
@@ -27,8 +21,8 @@
         <forward name="webbuscarmarcacoche" path="/webbuscarmarcacoche.jsp"/>        
         <forward name="webmodificarcoche" path="/webmodificarcoche.jsp"/>        
         <forward name="webmostrarcoche" path="/webmostrarcoche.jsp"/>
-        <forward name="webcoches" path="/webcoches.jsp"/>
         <forward name="webanadircoche" path="/webanadircoche.jsp"/>
+        <forward name="webcoches" path="/webcoches.jsp"/>
         <forward name="welcome" path="/Welcome.do"/>
     </global-forwards>
 
@@ -40,6 +34,7 @@
         <action path="/ActionModificarCoche2" 
                 type="controllers.ActionModificarCoche2"
                 name="FormModificarCoche"
+                input="/webmodificarcoche.jsp"
                 scope="request"/>
         <action path="/ActionModificarCoche1" 
                 type="controllers.ActionModificarCoche1"
@@ -52,7 +47,7 @@
                 scope="request"/>
         <action path="/ActionAnadirCoche" 
                 type="controllers.ActionAnadirCoche"
-                name="FormCheckAnadirCoche"
+                name="FormAnadirCoche"
                 input="/webanadircoche.jsp"
                 scope="request"/>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>

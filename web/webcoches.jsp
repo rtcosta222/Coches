@@ -37,7 +37,7 @@
             <main role="main" class="container">
                 <div class="starter-template">
                     <h1>Gestión de COCHES</h1><br/>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-success">
                         <thead>
                             <tr>
                                 <th>Id.</th>

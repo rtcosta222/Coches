@@ -14,7 +14,7 @@
     <head>
         <jsp:include page="includes/webhead.jsp"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>CRUD Coches</title>
     </head>
     <body>
         <jsp:include page="includes/webmenucoches.jsp"/>
@@ -24,15 +24,19 @@
                     <h1>Modificar Coche</h1>
                     <html:form action="/ActionModificarCoche2">
                         <label>Id.: </label>
-                        <html:text property="idcoche" value="${cochemod.idcoche}" styleClass="form-control" readonly="true"/>
+                            <html:text property="idcoche" value="${cochemod.idcoche}" styleClass="form-control" readonly="true"/>
                         <label>Marca: </label>
-                        <html:text property="marca" value="${cochemod.marca}" styleClass="form-control"/>
+                            <html:text property="marca" value="${cochemod.marca}" styleClass="form-control"/>
+                            <span style="color:red"><html:errors property="marca"/></span>
                         <label>Modelo: </label>
-                        <html:text property="modelo" value="${cochemod.modelo}" styleClass="form-control"/>
+                            <html:text property="modelo" value="${cochemod.modelo}" styleClass="form-control"/>
+                            <span style="color:red"><html:errors property="modelo"/></span>
                         <label>Conductor: </label>
-                        <html:text property="conductor" value="${cochemod.conductor}" styleClass="form-control"/>
+                            <html:text property="conductor" value="${cochemod.conductor}" styleClass="form-control"/>
+                            <span style="color:red"><html:errors property="conductor"/></span>            
                         <label>Imagen: </label>
-                        <html:text property="imagen" value="${cochemod.imagen}" styleClass="form-control"/><br/>
+                            <html:text property="imagen" value="${cochemod.imagen}" styleClass="form-control"/><br/>
+                            <span style="color:red"><html:errors property="imagen"/></span>
                         <button type="submit" class="btn btn-info">Modificar Coche</button>
                     </html:form>                    
                 </div>
